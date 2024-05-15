@@ -7,16 +7,16 @@ class TestEcuacionSegundoGrado(unittest.TestCase):
         self.calculoRaices = None
     def test_calculoESG_dosNumeros_retornaSolución(self):
         #Arrange
-        a = 1
-        b = 2
+        a = 3
+        b = -5
         c = 1
-        resultadoEsperadoRaiz1 = -1
-        resultadoEsperadoRaiz2 = -1
+        resultadoEsperadoRaiz1 = 1.43
+        resultadoEsperadoRaiz2 = 0.23
         #Do
         resultadoActualRaiz1,resultadoActualRaiz2 = self.calculoRaices.calculoESG(a, b, c)
         #Assert
-        self.assertEqual(resultadoEsperadoRaiz1,resultadoActualRaiz1)
-        self.assertEqual(resultadoEsperadoRaiz2,resultadoActualRaiz2)
+        self.assertAlmostEqualsEqual(resultadoEsperadoRaiz1,resultadoActualRaiz1,2)
+        self.assertAlmostEqualsEqual(resultadoEsperadoRaiz2,resultadoActualRaiz2,2)
 
 if __name__ == '__main__':
     unittest.main()
